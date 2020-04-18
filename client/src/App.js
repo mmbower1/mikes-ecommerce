@@ -1,0 +1,45 @@
+import React, { Fragment, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import PrivateRoute from './components/routing/PrivateRoute';
+import setAuthToken from './utils/setAuthToken';
+// actions
+import { loadUser } from './actions/auth';
+// redux
+import store from './store';
+import { Provider } from 'react-redux';
+// containers
+import Homepage from './containers/homepage/Homepage';
+import ShopPage from './containers/shop/Shop';
+import Auth from './containers/auth/Auth';
+import './App.css';
+// components
+import Header from './components/header/Header';
+
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
+
+function App() {
+  // used in functional components, not class based components where componentDidMount() is used instead
+  // userSet data keeps reverting back to inital state, check if session token is in localstorage and exists, if not - send back to login. If yes - loadUser(), wait for it to finish to show UI.
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, [])
+
+  return (
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+        <Header />
+          <Switch>
+            <Route exact path='/' component={Homepage} />
+            <Route path='/shop'component={ShopPage} />
+            <Route path='/auth'component={Auth} />
+          </Switch>
+        </Fragment>
+      </Router>
+    </Provider>
+  );
+}
+
+export default App;
