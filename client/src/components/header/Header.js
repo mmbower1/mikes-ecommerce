@@ -5,6 +5,9 @@ import { ReactComponent as Logo } from '../../img/logo.svg';
 import { Link } from 'react-router-dom';
 // actions
 import { logout } from '../../actions/auth';
+// components
+import Cart from '../cart/Cart';
+import CartIcon from '../cart-icon/CartIcon';
 // style
 import './Header.styles.scss';
 import { Dropdown, Menu } from 'semantic-ui-react';
@@ -14,14 +17,18 @@ const options = [
   { key: 2, text: 'Logout', value: () => logout() },
 ]
 
-const Header = ({ auth: { isAuthenticated, loading, user }, logout }) => {
+const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
   const authLinks = (
     <div className="options">
-      <Link to="/" onClick={logout}>Logout</Link>
+      <CartIcon />
+      {cart ? null : <Cart />}
+      <Link to="/" onClick={logout}><i class="fa fa-sign-out-alt"></i></Link>
       <Link to='/shop' className="hide-sm">Shop </Link>
       <Menu compact>
+        {console.log('user: ', user)}
         <Dropdown text={isAuthenticated ? user.name : null} options={options} simple item />
       </Menu>
+      
     </div>
   );
 
@@ -55,7 +62,8 @@ Header.propTypes = {
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  cart: state.cart.hidden
 });
 
 export default connect(mapStateToProps, { logout })(Header);

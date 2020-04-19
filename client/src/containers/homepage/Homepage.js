@@ -1,12 +1,14 @@
 import React from 'react';
 import './Homepage.styles.scss';
 // compmonents
-import Directory from '../../components/directory/Directory'
+import Directory from '../../components/directory/Directory';
+import Footer from '../../components/footer/Footer';
 
 const Homepage = () => {
   return (
     <div className="homepage">
       <Directory />
+      <Footer />
       {/* <div className="directory-menu">
         <div className="menu-item">
           <div className="content">
