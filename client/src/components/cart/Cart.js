@@ -1,20 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './Cart.styles.scss';
+// components
+import CartItem from '../cart-item/CartItem';
 // semantic
-import { Button, Segment } from 'semantic-ui-react'
+import { Button } from 'semantic-ui-react'
 
-const Cart = () => {
+const Cart = ({ cartItems }) => {
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
-        <Segment inverted>
-          <Button inverted color='green'>
-            Checkout
-          </Button>
-        </Segment>
+        {cartItems.map(cartItem => 
+          <CartItem key={cartItem.id} item={cartItem} />
+        )}
+        {/* {console.log(cartItems)} */}
+        {/* {'hello'} */}
       </div>
+      <br />
+      <Button inverted color='green' className="checkout-button">
+        Checkout
+      </Button>
     </div>
   )
 };
 
-export default Cart;
+// cart is destructured from state so: state.cart.cartItems
+const mapStateToProps = ({ cart: { cartItems }}) => ({
+  cartItems,
+});
+
+export default connect(mapStateToProps, null)(Cart);

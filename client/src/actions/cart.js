@@ -1,9 +1,21 @@
 import axios from 'axios';
 // import { setAlert } from './alert';
-import { TOGGLE_CART, TOGGLE_ERROR } from './types';
+import { ADD_ITEM, TOGGLE_CART, TOGGLE_ERROR } from './types';
 import setAuthToken from '../utils/setAuthToken';
 
-// load user
+// add item
+export const addItem = item => async dispatch => {
+  try {
+    dispatch({
+      type: ADD_ITEM,
+      payload: item
+    });
+    
+  } catch (err) {
+  }
+}
+
+// toggle cart
 export const toggleCart = () => async dispatch => {
   // if (localStorage.token) {
   //   setAuthToken(localStorage.token);
@@ -13,7 +25,7 @@ export const toggleCart = () => async dispatch => {
       type: TOGGLE_CART,
     });
   } catch (err) {
-    console.log("loadUser action ERROR: " + err);
+    console.log("toggle cart action ERROR: " + err);
     dispatch({
       type: TOGGLE_ERROR
     })

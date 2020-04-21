@@ -22,10 +22,9 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
     <div className="options">
       <CartIcon />
       {cart ? null : <Cart />}
-      <Link to="/" onClick={logout}><i class="fa fa-sign-out-alt"></i></Link>
+      <Link to="/" onClick={logout}><i className="fa fa-sign-out-alt"></i></Link>
       <Link to='/shop' className="hide-sm">Shop </Link>
       <Menu compact>
-        {console.log('user: ', user)}
         <Dropdown text={isAuthenticated ? user.name : null} options={options} simple item />
       </Menu>
       

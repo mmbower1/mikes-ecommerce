@@ -1,7 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './CollectionItem.styles.scss';
+// actions
+import { addItem } from '../../actions/cart';
 
-const CollectionItem = ({ id, name, price, imageUrl }) => {
+// semantic
+import { Button } from 'semantic-ui-react'
+
+const CollectionItem = ({ addItem, item }) => {
+  const { name, price, imageUrl } = item;
+
   return (
     <div className="collection-item">
       <div className="image" style={{ backgroundImage: `url(${imageUrl})`}}>
@@ -10,8 +18,20 @@ const CollectionItem = ({ id, name, price, imageUrl }) => {
           <span className="price">{price}</span>
         </div>
       </div>
+      <Button 
+        inverted 
+        color='green' 
+        className="checkout-button"
+        onClick={() => addItem(item)}
+      >
+        Add to Cart
+      </Button>
     </div>
   )
 }
 
-export default CollectionItem;
+const mapDispatchToProps = dispatch => ({
+  addItem: item => dispatch(addItem(item))
+});
+
+export default connect(null, mapDispatchToProps)(CollectionItem);

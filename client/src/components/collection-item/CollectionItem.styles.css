@@ -13,6 +13,9 @@
   background-position: center;
   margin-bottom: 5px;
 }
+.collection-item:hover .image {
+  opacity: 0.8;
+}
 .collection-item .collection-footer {
   width: 100%;
   height: 5%;

@@ -1,6 +1,6 @@
 .cart-dropdown {
   position: absolute;
-  width: 240px;
+  width: 260px;
   height: 340px;
   display: flex;
   flex-direction: column;
@@ -18,5 +18,5 @@
   overflow: scroll;
 }
 .cart-dropdown button {
-  margin-bottom: auto;
+  margin-top: auto;
 }
