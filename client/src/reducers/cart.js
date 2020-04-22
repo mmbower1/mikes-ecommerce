@@ -24,7 +24,6 @@ export default function(state = initialState, action) {
           ...state,
           // cartItems: [...state.cartItems, payload],
           cartItems: addItemToCart(state.cartItems, payload), //updated way from line above
-          // log: console.log('cartItems: ', cartItems)
         }
       case TOGGLE_CART:
         return {

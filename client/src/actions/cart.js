@@ -17,9 +17,6 @@ export const addItem = item => async dispatch => {
 
 // toggle cart
 export const toggleCart = () => async dispatch => {
-  // if (localStorage.token) {
-  //   setAuthToken(localStorage.token);
-  // }
   try {
     dispatch({
       type: TOGGLE_CART,

@@ -8,6 +8,7 @@ import { loadUser } from './actions/auth';
 import store from './store';
 import { Provider } from 'react-redux';
 // containers
+import Checkout from './containers/checkout/Checkout';
 import Homepage from './containers/homepage/Homepage';
 import ShopPage from './containers/shop/Shop';
 import Auth from './containers/auth/Auth';
@@ -32,6 +33,7 @@ function App() {
         <Fragment>
         <Header />
           <Switch>
+            <Route exact path='/checkout' component={Checkout} />
             <Route exact path='/' component={Homepage} />
             <Route path='/shop'component={ShopPage} />
             <Route path='/auth'component={Auth} />

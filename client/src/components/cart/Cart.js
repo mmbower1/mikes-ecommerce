@@ -1,23 +1,36 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import './Cart.styles.scss';
+// actions
+import { toggleCart } from '../../actions/cart';
 // components
 import CartItem from '../cart-item/CartItem';
 // semantic
 import { Button } from 'semantic-ui-react'
 
-const Cart = ({ cartItems }) => {
+const Cart = ({ cartItems, history, dispatch }) => { // withRouter() gives access to history prop
   return (
     <div className="cart-dropdown">
       <div className="cart-items">
-        {cartItems.map(cartItem => 
-          <CartItem key={cartItem.id} item={cartItem} />
+        {cartItems.length ? (
+          cartItems.map(cartItem => (
+            <CartItem key={cartItem.id} item={cartItem} />
+          ))
+        ) : (
+          <span className="empty-message">Your cart is empty</span>
         )}
-        {/* {console.log(cartItems)} */}
-        {/* {'hello'} */}
       </div>
       <br />
-      <Button inverted color='green' className="checkout-button">
+      <Button 
+        inverted 
+        color='green' 
+        className="checkout-button"
+        onClick={() => {
+          history.push('/checkout');
+          dispatch(toggleCart());
+        }}
+      >
         Checkout
       </Button>
     </div>
@@ -29,4 +42,4 @@ const mapStateToProps = ({ cart: { cartItems }}) => ({
   cartItems,
 });
 
-export default connect(mapStateToProps, null)(Cart);
+export default withRouter(connect(mapStateToProps, null)(Cart));
