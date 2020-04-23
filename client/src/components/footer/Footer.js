@@ -11,13 +11,13 @@ const Footer = () => {
         </Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column><i class="fab fa-facebook-square"></i></Grid.Column>
+        <Grid.Column><i className="fab fa-facebook-square"></i></Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column><i class="fab fa-instagram"></i></Grid.Column>
+        <Grid.Column><i className="fab fa-instagram"></i></Grid.Column>
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column><i class="fab fa-linkedin"></i></Grid.Column>
+        <Grid.Column><i className="fab fa-linkedin"></i></Grid.Column>
       </Grid.Row>
       <Grid.Row>
         &nbsp;&nbsp;&nbsp;© 2020 Copyright. mikes-ecommerce, all rights reserved.
