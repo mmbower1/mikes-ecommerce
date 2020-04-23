@@ -1,6 +1,12 @@
 import axios from 'axios';
 // import { setAlert } from './alert';
-import { ADD_ITEM, TOGGLE_CART, TOGGLE_ERROR } from './types';
+import { 
+  ADD_ITEM,
+  REMOVE_ITEM,
+  REMOVE_ITEMS, 
+  TOGGLE_CART, 
+  TOGGLE_ERROR 
+} from './types';
 import setAuthToken from '../utils/setAuthToken';
 
 // add item
@@ -12,6 +18,33 @@ export const addItem = item => async dispatch => {
     });
     
   } catch (err) {
+    alert('addItem action error: ', err)
+  }
+}
+
+// remove item
+export const removeItem = item => async dispatch => {
+  try {
+    dispatch({
+      type: REMOVE_ITEM,
+      payload: item
+    });
+    
+  } catch (err) {
+    alert('removeItem action error: ', err)
+  }
+}
+
+// remove items
+export const removeItems = item => async dispatch => {
+  try {
+    dispatch({
+      type: REMOVE_ITEMS,
+      payload: item
+    });
+    
+  } catch (err) {
+    alert('removeItem action error: ', err)
   }
 }
 
@@ -22,7 +55,7 @@ export const toggleCart = () => async dispatch => {
       type: TOGGLE_CART,
     });
   } catch (err) {
-    console.log("toggle cart action ERROR: " + err);
+    console.log("toggleCart action ERROR: " + err);
     dispatch({
       type: TOGGLE_ERROR
     })

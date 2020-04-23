@@ -7,7 +7,7 @@ import { addItem } from '../../actions/cart';
 // semantic
 import { Button } from 'semantic-ui-react'
 
-const CollectionItem = ({ addItem, item }) => {
+const CollectionItem = ({ add, item }) => {
   const { name, price, imageUrl } = item;
 
   return (
@@ -22,7 +22,7 @@ const CollectionItem = ({ addItem, item }) => {
         inverted 
         color='green' 
         className="checkout-button"
-        onClick={() => addItem(item)}
+        onClick={() => add(item)}
       >
         Add to Cart
       </Button>
@@ -31,7 +31,7 @@ const CollectionItem = ({ addItem, item }) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  addItem: item => dispatch(addItem(item))
+  add: item => dispatch(addItem(item))
 });
 
 export default connect(null, mapDispatchToProps)(CollectionItem);

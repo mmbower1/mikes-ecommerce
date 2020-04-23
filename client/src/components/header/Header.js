@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { ReactComponent as Logo } from '../../img/logo.svg';
+import { ReactComponent as Logo } from '../../img/crown.svg';
 import { Link } from 'react-router-dom';
 // actions
 import { logout } from '../../actions/auth';
