@@ -14,7 +14,7 @@ import ShopPage from './containers/shop/Shop';
 import Auth from './containers/auth/Auth';
 import './App.css';
 // components
-import Header from './components/header/Header';
+// import Header from './components/header/Header';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -31,7 +31,7 @@ function App() {
     <Provider store={store}>
       <Router>
         <Fragment>
-        <Header />
+        {/* <Header /> */}
           <Switch>
             <Route exact path='/checkout' component={Checkout} />
             <Route exact path='/' component={Homepage} />

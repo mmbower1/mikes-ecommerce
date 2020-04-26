@@ -5,10 +5,11 @@ import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react';
 // actions
 import { login } from '../../actions/auth';
+import { setAlert } from '../../actions/alert';
 // components
 import './Login.styles.scss';
 
-const Login = ({ isAuthenticated, login }) => {
+const Login = ({ isAuthenticated, login, setAlert }) => {
 	const [ formData, setFormData ] = useState({
 		email: '',
 		password: ''
@@ -20,8 +21,8 @@ const Login = ({ isAuthenticated, login }) => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
+		setAlert('You have successfully logged in', 'success');
 		login(email, password);
-		console.log('LOGIN');
 	};
 
 	// redirect if logged in
@@ -71,5 +72,6 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, { 
-  login
+	login,
+	setAlert
 })(Login);

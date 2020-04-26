@@ -7,7 +7,6 @@ import {
   TOGGLE_CART, 
   TOGGLE_ERROR 
 } from './types';
-import setAuthToken from '../utils/setAuthToken';
 
 // add item
 export const addItem = item => async dispatch => {

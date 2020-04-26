@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ReactComponent as Logo } from '../../img/crown.svg';
@@ -10,7 +10,7 @@ import Cart from '../cart/Cart';
 import CartIcon from '../cart-icon/CartIcon';
 // style
 import './Header.styles.scss';
-import { Dropdown, Menu } from 'semantic-ui-react';
+import { Button, Dropdown, Menu } from 'semantic-ui-react';
 
 const options = [
   { key: 1, text: 'My Account', value: 1 },
@@ -19,39 +19,73 @@ const options = [
 
 const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
   const authLinks = (
-    <div className="options">
-      <CartIcon />
-      {cart ? null : <Cart />}
-      <Link to="/" onClick={logout}><i className="fa fa-sign-out-alt"></i></Link>
-      <Link to='/shop' className="hide-sm">Shop </Link>
-      <Menu compact>
-        <Dropdown text={isAuthenticated ? user.name : null} options={options} simple item />
-      </Menu>
+    // <div className="header">
+    //   <CartIcon />
+    //   {cart ? null : <Cart />}
+    //   <Link to="/" onClick={logout}><i className="fa fa-sign-out-alt"></i></Link>
+    //   <Link to='/shop' className="hide-sm">Shop </Link>
+    //   <Menu compact>
+    //     <Dropdown text={isAuthenticated ? user.name : null} options={options} simple item />
+    //   </Menu>
       
+    // </div>
+    <div className="header">
+      <Menu size='massive'>
+        <Menu.Item>
+          <Link to='/'><Logo /></Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to='/shop'>Shop</Link>
+        </Menu.Item>
+
+        <Menu.Menu position='right'>
+          <Menu.Item>
+            <CartIcon />
+            {cart ? null : <Cart />}
+          </Menu.Item>
+          <Dropdown item text={isAuthenticated ? user.name : null}>
+            <Dropdown.Menu>
+              <Dropdown.Item>My Account</Dropdown.Item>
+              <Link to="/" onClick={logout}><Dropdown.Item>Logout</Dropdown.Item></Link>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Menu.Menu>
+      </Menu>
     </div>
   );
 
   const guestLinks = (
-    <div className="options">
-      <Link className="option" to='/shop'>
-        SHOP
-      </Link>
-      <Link className="option" to='/auth'>
-        SIGN-IN
-      </Link>
-      {/* <Link className="option" to='/contact'>
-        CONTACT
-      </Link> */}
+    <div className="header">
+      <Menu size='massive'>
+        <Menu.Item>
+          <Link to='/'><Logo /></Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to='/shop'>Shop</Link>
+        </Menu.Item>
+
+        <Menu.Menu position='right'>
+          <Menu.Item>
+            <Link to='/auth'>Login</Link>
+          </Menu.Item>
+        </Menu.Menu>
+      </Menu>
+      {/* <Menu size='massive'>
+        <Menu.Menu>
+          <Link to='/auth'><Logo />Login</Link>
+        </Menu.Menu>
+        <Menu.Item>
+          <Link to='/shop'>Shop</Link>
+        </Menu.Item>
+      </Menu> */}
   </div>
   );
 
   return (
-    <div className="header">
-      <Link className="logo-container" to='/'>
-        <Logo />
-      </Link>
+    <div>
       {!loading && (<Fragment>{ isAuthenticated ? authLinks : guestLinks }</Fragment>)}
     </div>
+    
   )
 }
 

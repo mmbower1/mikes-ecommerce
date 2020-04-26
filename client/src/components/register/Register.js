@@ -3,13 +3,14 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { Button, Divider, Form } from 'semantic-ui-react';
-// action
+// actions
 import { register } from '../../actions/auth';
+import { setAlert } from '../../actions/alert';
 // components
 // import FormInput from '../form-input/FormInput';
 import './Register.styles.scss';
 
-const Register = ({ isAuthenticated, register }) => {
+const Register = ({ isAuthenticated, register, setAlert }) => {
 	const [ formData, setFormData ] = useState({
 		name: '',
 		email: '',
@@ -25,7 +26,7 @@ const Register = ({ isAuthenticated, register }) => {
 	const onSubmit = async (e) => {
 		e.preventDefault();
     if (password !== password2) {
-      alert('Passwords do not match', 'danger');
+      setAlert('Passwords do not match', 'danger');
     } else {
       register({ name, email, phoneNumber, password, password2 })
       console.log('REGISTERED')
@@ -114,5 +115,6 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, { 
-  register 
+	register,
+	setAlert
 })(Register);

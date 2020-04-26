@@ -1,58 +1,22 @@
 import React from 'react';
 import './Homepage.styles.scss';
 // compmonents
+import Alert from '../../components/alert/Alert';
 import Directory from '../../components/directory/Directory';
+import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 
 const Homepage = () => {
   return (
-    <div className="homepage">
-      <Directory />
-      <Footer />
-      {/* <div className="directory-menu">
-        <div className="menu-item">
-          <div className="content">
-            <h1 className="title">TINCTURES</h1>
-            <span className="subtitle">SHOP NOW</span>
-          </div>
-        </div>
-        <div className="menu-item">
-          <div className="content">
-            <h1 className="title">EDIBLES</h1>
-            <span className="subtitle">SHOP NOW</span>
-          </div>
-        </div>
-        <div className="menu-item">
-          <div className="content">
-            <h1 className="title">TOPICALS</h1>
-            <span className="subtitle">SHOP NOW</span>
-          </div>
-        </div>
-        <div className="menu-item">
-          <div className="content">
-            <h1 className="title">CAPSULES</h1>
-            <span className="subtitle">SHOP NOW</span>
-          </div>
-        </div>
-        <div className="menu-item">
-          <div className="content">
-            <h1 className="title">SLEEP</h1>
-            <span className="subtitle">SHOP NOW</span>
-          </div>
-        </div>
-        <div className="menu-item">
-          <div className="content">
-            <h1 className="title">PETS</h1>
-            <span className="subtitle">SHOP NOW</span>
-          </div>
-        </div>
-        <div className="menu-item">
-          <div className="content">
-            <h1 className="title">BUNDLES</h1>
-            <span className="subtitle">SHOP NOW</span>
-          </div>
-        </div>
-      </div> */}
+    <div>
+      <div>
+        <Header />
+      </div>
+      <div className="homepage">
+        <Alert />
+        <Directory />
+        <Footer />
+      </div>
     </div>
   )
 }

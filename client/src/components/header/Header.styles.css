@@ -1,25 +1,4 @@
 .header {
-  height: 70px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 25px;
-}
-.header .logo-container {
-  height: 100%;
-  width: 70px;
-  padding: 25px;
-  margin-left: 30px;
-}
-.header .options {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: 30px;
-  margin-top: 20px;
-  width: 50%;
-}
-.header .options .option {
-  padding: 10px 15px;
+  margin: auto;
+  width: 86%;
 }
