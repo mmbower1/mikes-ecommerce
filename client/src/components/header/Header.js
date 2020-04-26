@@ -19,16 +19,6 @@ const options = [
 
 const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
   const authLinks = (
-    // <div className="header">
-    //   <CartIcon />
-    //   {cart ? null : <Cart />}
-    //   <Link to="/" onClick={logout}><i className="fa fa-sign-out-alt"></i></Link>
-    //   <Link to='/shop' className="hide-sm">Shop </Link>
-    //   <Menu compact>
-    //     <Dropdown text={isAuthenticated ? user.name : null} options={options} simple item />
-    //   </Menu>
-      
-    // </div>
     <div className="header">
       <Menu size='massive'>
         <Menu.Item>
@@ -45,7 +35,7 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
           </Menu.Item>
           <Dropdown item text={isAuthenticated ? user.name : null}>
             <Dropdown.Menu>
-              <Dropdown.Item>My Account</Dropdown.Item>
+              <Link to="/edit"><Dropdown.Item>My Account</Dropdown.Item></Link>
               <Link to="/" onClick={logout}><Dropdown.Item>Logout</Dropdown.Item></Link>
             </Dropdown.Menu>
           </Dropdown>
@@ -70,14 +60,6 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
           </Menu.Item>
         </Menu.Menu>
       </Menu>
-      {/* <Menu size='massive'>
-        <Menu.Menu>
-          <Link to='/auth'><Logo />Login</Link>
-        </Menu.Menu>
-        <Menu.Item>
-          <Link to='/shop'>Shop</Link>
-        </Menu.Item>
-      </Menu> */}
   </div>
   );
 

@@ -23,16 +23,14 @@ class Auth extends React.Component {
 
 		return (
 			<div>
-				<div>
-					<div className="header">
+				<div className="header">
 					<Menu size='massive'>
 						<Menu.Item>
 							<Link to="/">Back</Link>
 						</Menu.Item>
 					</Menu>
 				</div>
-			</div>
-			<br />
+				<br />
 				<div className="auth">
 					<Login />
 					<br />

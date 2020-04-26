@@ -5,7 +5,7 @@ import './Shop.styles.scss';
 // components
 import CollectionPreview from '../../components/collection-preview/CollectionPreview';
 // semantic
-import { Button, Menu } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
 const Shop = ({ collections }) => {
   return (

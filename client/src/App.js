@@ -9,6 +9,7 @@ import store from './store';
 import { Provider } from 'react-redux';
 // containers
 import Checkout from './containers/checkout/Checkout';
+import Edit from './containers/edit/Edit';
 import Homepage from './containers/homepage/Homepage';
 import ShopPage from './containers/shop/Shop';
 import Auth from './containers/auth/Auth';
@@ -35,6 +36,7 @@ function App() {
           <Switch>
             <Route exact path='/checkout' component={Checkout} />
             <Route exact path='/' component={Homepage} />
+            <Route exact path='/edit' component={Edit} />
             <Route path='/shop'component={ShopPage} />
             <Route path='/auth'component={Auth} />
           </Switch>
