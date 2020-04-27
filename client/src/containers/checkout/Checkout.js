@@ -6,18 +6,13 @@ import { Button, Menu } from 'semantic-ui-react';
 import './Checkout.styles.scss'
 // components
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
+import Header from '../../components/header/Header';
 
 const Checkout = ({ cartItems, total }) => {
   console.log('checkout: ', total);
   return (
     <div>
-      <div className="header">
-        <Menu size='massive'>
-          <Menu.Item>
-            <Link to="/">Back</Link>
-          </Menu.Item>
-        </Menu>
-      </div>
+      <Header />
       <div className="checkout-page">
         <div className="checkout-header">
           <div className="header-block">

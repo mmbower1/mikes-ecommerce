@@ -4,9 +4,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import setAuthToken from './utils/setAuthToken';
 // actions
 import { loadUser } from './actions/auth';
-// redux
-import store from './store';
-import { Provider } from 'react-redux';
 // containers
 import Checkout from './containers/checkout/Checkout';
 import Edit from './containers/edit/Edit';
@@ -16,6 +13,9 @@ import Auth from './containers/auth/Auth';
 import './App.css';
 // components
 // import Header from './components/header/Header';
+// redux
+import store from './store';
+import { Provider } from 'react-redux';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);

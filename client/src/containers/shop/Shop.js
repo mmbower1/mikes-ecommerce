@@ -4,19 +4,12 @@ import { Link } from 'react-router-dom';
 import './Shop.styles.scss';
 // components
 import CollectionPreview from '../../components/collection-preview/CollectionPreview';
-// semantic
-import { Menu } from 'semantic-ui-react';
+import Header from '../../components/header/Header';
 
 const Shop = ({ collections }) => {
   return (
     <div>
-      <div className="header">
-        <Menu size='massive'>
-          <Menu.Item>
-            <Link to="/">Back</Link>
-          </Menu.Item>
-        </Menu>
-      </div>
+      <Header />
       <div className="shop-page">
         {collections.map(({ id, ...props }) => (
           <CollectionPreview key={id} {...props} />

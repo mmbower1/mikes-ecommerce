@@ -8,7 +8,7 @@ import './CollectionPreview.styles.scss';
 const CollectionPreview = ({ title, items }) => {
   return (
     <div className="collection-preview">
-      <Divider color="black" />
+      
       <h1 className="title">{title.toUpperCase()}</h1>
       <div className="preview">
         {items
@@ -17,6 +17,10 @@ const CollectionPreview = ({ title, items }) => {
             <CollectionItem key={item.id} item={item} />
           ))}
       </div>
+      <br />
+      <br />
+      <br />
+      <Divider color="black" />
     </div>
   )
 }
