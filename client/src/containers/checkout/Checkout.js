@@ -7,6 +7,7 @@ import './Checkout.styles.scss'
 // components
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
 import Header from '../../components/header/Header';
+import Stripe from '../../components/stripe/Stripe'
 
 const Checkout = ({ cartItems, total }) => {
   console.log('checkout: ', total);
@@ -38,6 +39,8 @@ const Checkout = ({ cartItems, total }) => {
         <div className="total">
           <span>TOTAL: ${total}</span>
         </div>
+        <Stripe price={total} />
+        <h4 style={{color: 'red'}}>TEST: 4242 4242 4242 4242 - Exp: 01/23 - CW: 123</h4>
       </div>
     </div>
   )
