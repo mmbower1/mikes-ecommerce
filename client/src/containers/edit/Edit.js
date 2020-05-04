@@ -1,11 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { Link, Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 // styles
 import { Button, Form, Menu } from 'semantic-ui-react';
 import './Edit.styles.scss';
 
-const Edit = (props) => {
+const Edit = ({ isAuthenticated, user }) => {
+
+  // redirect if not logged in
+	if (!isAuthenticated) {
+		return <Redirect to="/" />;
+  }
+
 	return (
     <div>
       <div>
@@ -16,7 +23,7 @@ const Edit = (props) => {
         </Menu>
       </div>
       <div className="edit-container">
-        <h2>Update your account</h2>
+      <h2>Update account for: {user.email} </h2>
         <br />
         <Form>
           <Form.Group unstackable widths={2}>
@@ -38,6 +45,11 @@ const Edit = (props) => {
 	);
 };
 
+const mapStateToProps = ({ auth: { isAuthenticated, user } }) => ({
+  isAuthenticated,
+  user
+})
+
 Edit.propTypes = {};
 
-export default Edit;
+export default connect(mapStateToProps, {})(Edit);

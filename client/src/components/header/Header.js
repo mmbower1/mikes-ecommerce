@@ -12,10 +12,10 @@ import CartIcon from '../cart-icon/CartIcon';
 import './Header.styles.scss';
 import { Button, Dropdown, Menu } from 'semantic-ui-react';
 
-const options = [
-  { key: 1, text: 'My Account', value: 1 },
-  { key: 2, text: 'Logout', value: () => logout() },
-]
+// const options = [
+//   { key: 1, text: 'My Account', value: 1 },
+//   { key: 2, text: 'Logout', value: () => logout() },
+// ]
 
 const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
   const authLinks = (

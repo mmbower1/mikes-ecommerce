@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 // style
 import { Button, Menu } from 'semantic-ui-react';
 import './Checkout.styles.scss'
@@ -9,8 +9,14 @@ import CheckoutItem from '../../components/checkout-item/CheckoutItem';
 import Header from '../../components/header/Header';
 import Stripe from '../../components/stripe/Stripe'
 
-const Checkout = ({ cartItems, total }) => {
+const Checkout = ({ isAuthenticated, cartItems, total }) => {
   console.log('checkout: ', total);
+
+  // redirect if not logged in
+	if (!isAuthenticated) {
+		return <Redirect to="/" />;
+  }
+  
   return (
     <div>
       <Header />
@@ -47,13 +53,14 @@ const Checkout = ({ cartItems, total }) => {
 };
 
 // cart is destructured from state so: state.cart.cartItems
-const mapStateToProps = ({ cart: { cartItems }}) => ({
+const mapStateToProps = ({ auth: { isAuthenticated }, cart: { cartItems }}) => ({
   // same thing as a selector
   // itemCount: cartItems.reduce(
   //   (accumulatedQuantity, cartItem) => 
   //     accumulatedQuantity + (cartItem.quantity * cartItem.price), 0
   //   )
-    cartItems
+    cartItems,
+    isAuthenticated
   })
 
 export default connect(mapStateToProps, null)(Checkout);

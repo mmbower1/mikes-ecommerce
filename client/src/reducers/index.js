@@ -4,6 +4,7 @@ import auth from './auth';
 import cart from './cart';
 import directory from './directory';
 import shop from './shop';
+import stripe from './stripe';
 // import profile from './profile';
 
 export default combineReducers({
@@ -11,6 +12,7 @@ export default combineReducers({
   auth,
   cart,
   directory,
-  shop
+  shop,
+  stripe
   // profile
 });
