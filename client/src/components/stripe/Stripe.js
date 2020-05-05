@@ -11,23 +11,24 @@ const Stripe = ({ price }) => {
   const publishableKey = 'pk_test_MYtc1Y9o2kastiaotdprXIpM00kcIqDurv';
   // const publishableKey = process.env.STRIPE_PUBLISHABLE_KEY;
 
-  // const onToken = token => {
-  //   console.log(token);
-  //   axios({
-  //     data: {
-  //       amount: stripePrice,
-  //       token
-  //     },
-  //     url: 'stripe',
-  //     method: 'post'
-  //   }).then(res => {
-  //     pay();
-  //     alert('Payment successful');
-  //   }).catch(err => {
-  //     console.log(err);
-  //     alert('Payment error')
-  //   })
-  // }
+  const onToken = token => {
+    // console.log(token);
+    pay(token)
+    // axios({
+    //   data: {
+    //     amount: stripePrice,
+    //     token
+    //   },
+    //   url: 'stripe',
+    //   method: 'post'
+    // }).then(res => {
+    //   pay();
+    //   alert('Payment successful');
+    // }).catch(err => {
+    //   console.log(err);
+    //   alert('Payment error')
+    // })
+  }
 
   return (
     <StripeCheckout
@@ -36,10 +37,10 @@ const Stripe = ({ price }) => {
       billingAddress
       shippingAddress
       image=''
-      description={`Your total is ${price}`}
+      description={`Your total is ${'$' + price}`}
       amount={stripePrice}
       panelLabel='Pay with Stripe'
-      token={pay}
+      token={onToken}
       stripeKey={publishableKey}
     />
   )

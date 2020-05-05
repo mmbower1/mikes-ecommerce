@@ -11,13 +11,15 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 // @route    POST /stripe
 // @desc     Charge user
 // @access   Public
-router.post('/stripe', (req, res) => {
+router.post('/', (req, res) => {
+  console.log(req.body.source);
   try {
     const body = {
-      source: req.body.token.id,
+      source: req.body.source,
       amount: req.body.amount,
       currency: 'usd'
     }
+    console.log('body: ', body)
     stripe.charges.create(body, (stripeErr, stripeRes) => {
       if (stripeErr) {
         res.status(500).send({ error: stripeErr });
@@ -27,7 +29,8 @@ router.post('/stripe', (req, res) => {
     });
 
   } catch(err) {
-    console.log(err);
+    console.log(err.message);
+    res.status(500).send('Server Error stripe')
   }
 
 });

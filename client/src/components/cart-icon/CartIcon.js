@@ -20,9 +20,9 @@ const mapStateToProps = ({ cart: { cartItems }}) => ({
   // same thing as a selector
   itemCount: cartItems.reduce(
     (accumulatedQuantity, cartItem) => 
-      accumulatedQuantity + cartItem.quantity, 0
-    )
-  })
+      accumulatedQuantity + cartItem.quantity, 0)
+  }
+)
 
 const mapDispatchToProps = dispatch => ({
   toggleCart: () => dispatch(toggleCart())

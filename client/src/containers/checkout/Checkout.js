@@ -10,7 +10,8 @@ import Header from '../../components/header/Header';
 import Stripe from '../../components/stripe/Stripe'
 
 const Checkout = ({ isAuthenticated, cartItems, total }) => {
-  console.log('checkout: ', total);
+  console.log('total: ', total);
+  console.log('cartItems: ', cartItems);
 
   // redirect if not logged in
 	if (!isAuthenticated) {
@@ -55,10 +56,10 @@ const Checkout = ({ isAuthenticated, cartItems, total }) => {
 // cart is destructured from state so: state.cart.cartItems
 const mapStateToProps = ({ auth: { isAuthenticated }, cart: { cartItems }}) => ({
   // same thing as a selector
-  // itemCount: cartItems.reduce(
-  //   (accumulatedQuantity, cartItem) => 
-  //     accumulatedQuantity + (cartItem.quantity * cartItem.price), 0
-  //   )
+  total: cartItems.reduce(
+    (accumulatedQuantity, cartItem) => 
+      accumulatedQuantity + cartItem.quantity * cartItem.price, 0
+    ),
     cartItems,
     isAuthenticated
   })
