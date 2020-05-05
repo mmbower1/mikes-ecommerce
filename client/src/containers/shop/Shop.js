@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import './Shop.styles.scss';
 // components
-import CollectionPreview from '../../components/collection-preview/CollectionPreview';
+import CollectionOverview from '../../components/collection-overview/CollectionOverview';
 import Header from '../../components/header/Header';
 
 const Shop = ({ collections }) => {
@@ -11,9 +10,7 @@ const Shop = ({ collections }) => {
     <div>
       <Header />
       <div className="shop-page">
-        {collections.map(({ id, ...props }) => (
-          <CollectionPreview key={id} {...props} />
-        ))}
+        <CollectionOverview />
       </div>
     </div>
   )

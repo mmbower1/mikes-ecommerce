@@ -44,7 +44,7 @@ const Checkout = ({ isAuthenticated, cartItems, total }) => {
         )}
         {/* {itemCount} */}
         <div className="total">
-          <span>TOTAL: ${total}</span>
+          <span>TOTAL:  ${total}</span>
         </div>
         <Stripe price={total} />
         <h4 style={{color: 'red'}}>TEST: 4242 4242 4242 4242 - Exp: 01/23 - CW: 123</h4>
@@ -55,13 +55,13 @@ const Checkout = ({ isAuthenticated, cartItems, total }) => {
 
 // cart is destructured from state so: state.cart.cartItems
 const mapStateToProps = ({ auth: { isAuthenticated }, cart: { cartItems }}) => ({
-  // same thing as a selector
+  // same thing as a selector, just put into the selector file
   total: cartItems.reduce(
     (accumulatedQuantity, cartItem) => 
       accumulatedQuantity + cartItem.quantity * cartItem.price, 0
     ),
-    cartItems,
-    isAuthenticated
+  cartItems,
+  isAuthenticated
   })
 
 export default connect(mapStateToProps, null)(Checkout);
