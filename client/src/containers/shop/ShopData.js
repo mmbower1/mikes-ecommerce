@@ -1,5 +1,5 @@
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  tinctures: {
     id: 1,
     title: 'Tinctures',
     routeName: 'tinctures',
@@ -60,7 +60,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  edibles: {
     id: 2,
     title: 'Edibles',
     routeName: 'edibles',
@@ -109,7 +109,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  topicals: {
     id: 3,
     title: 'Topicals',
     routeName: 'topicals',
@@ -146,7 +146,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  capsules: {
     id: 4,
     title: 'Capsules',
     routeName: 'capsules',
@@ -183,7 +183,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  pets: {
     id: 5,
     title: 'Pets',
     routeName: 'pets',
@@ -226,7 +226,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  sleep: {
     id: 6,
     title: 'Sleep',
     routeName: 'sleep',
@@ -269,7 +269,7 @@ const SHOP_DATA = [
       }
     ]
   },
-  {
+  bundles: {
     id: 7,
     title: 'Bundles',
     routeName: 'bundles',
@@ -312,6 +312,6 @@ const SHOP_DATA = [
       }
     ]
   }
-]
+}
 
 export default SHOP_DATA;
