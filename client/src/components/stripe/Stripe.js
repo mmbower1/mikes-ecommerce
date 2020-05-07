@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 // actions
 import { pay } from '../../actions/stripe';
 // npm
-import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
 
 const Stripe = ({ price }) => {

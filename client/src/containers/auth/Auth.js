@@ -5,7 +5,7 @@ import Login from '../../components/login/Login';
 import Register from '../../components/register/Register';
 // semantic
 import { Accordion, Icon } from 'semantic-ui-react';
-import { Button, Menu } from 'semantic-ui-react';
+import { Menu } from 'semantic-ui-react';
 
 class Auth extends React.Component {
 	state = { activeIndex: 0 }

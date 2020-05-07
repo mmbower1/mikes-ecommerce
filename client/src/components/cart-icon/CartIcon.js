@@ -5,7 +5,7 @@ import { ReactComponent as ShoppingIcon } from '../../img/shopping-bag.svg';
 import { toggleCart } from '../../actions/cart';
 import './CartIcon.styles.scss';
 // selectors
-import { selectCartItems } from '../cart/Cart.selectors.js';
+// import { selectCartItems } from '../cart/Cart.selectors.js';
 
 const CartIcon = ({ itemCount, toggleCart }) => {
   return (

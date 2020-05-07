@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { ReactComponent as Logo } from '../../img/crown.svg';
@@ -10,7 +10,7 @@ import Cart from '../cart/Cart';
 import CartIcon from '../cart-icon/CartIcon';
 // style
 import './Header.styles.scss';
-import { Button, Dropdown, Menu } from 'semantic-ui-react';
+import { Dropdown, Menu } from 'semantic-ui-react';
 
 // const options = [
 //   { key: 1, text: 'My Account', value: 1 },

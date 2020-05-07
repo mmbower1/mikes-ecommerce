@@ -2,8 +2,7 @@ import {
   ADD_ITEM,
   REMOVE_ITEM,
   REMOVE_ITEMS,
-  TOGGLE_CART,
-  TOGGLE_ERROR
+  TOGGLE_CART
   // UPDATE_ACCOUNT
 } from '../actions/types';
 
@@ -37,7 +36,7 @@ export default function(state = initialState, action) {
         return {
           ...state,
           cartItems: state.cartItems.filter(cartItem => 
-            cartItem.id != payload.id
+            cartItem.id !== payload.id
           )
         }
       case TOGGLE_CART:

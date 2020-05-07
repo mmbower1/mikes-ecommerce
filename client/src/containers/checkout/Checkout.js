@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 // style
-import { Button, Menu } from 'semantic-ui-react';
 import './Checkout.styles.scss'
 // components
 import CheckoutItem from '../../components/checkout-item/CheckoutItem';
