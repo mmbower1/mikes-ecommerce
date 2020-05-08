@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1c1300b90853702969d05ce4007209b0",
+    "revision": "f563f6680aa28a48b8df6df99c5a15f3",
     "url": "/mikes-ecommerce/index.html"
   },
   {
-    "revision": "0b3c3492a19a8be9a2af",
+    "revision": "de8ebd676e98e21ec8ff",
     "url": "/mikes-ecommerce/static/css/main.32a88de0.chunk.css"
   },
   {
-    "revision": "550bcc40a25a8ffafc51",
-    "url": "/mikes-ecommerce/static/js/2.4b9ae030.chunk.js"
+    "revision": "689f03403092e89ec2a5",
+    "url": "/mikes-ecommerce/static/js/2.871d242d.chunk.js"
   },
   {
     "revision": "4d47ffde3dc69784e8e23fd910817ef8",
-    "url": "/mikes-ecommerce/static/js/2.4b9ae030.chunk.js.LICENSE.txt"
+    "url": "/mikes-ecommerce/static/js/2.871d242d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0b3c3492a19a8be9a2af",
-    "url": "/mikes-ecommerce/static/js/main.a92db5ba.chunk.js"
+    "revision": "de8ebd676e98e21ec8ff",
+    "url": "/mikes-ecommerce/static/js/main.2a2d7a8c.chunk.js"
   },
   {
     "revision": "cd3b4f73ed8f85086848",
