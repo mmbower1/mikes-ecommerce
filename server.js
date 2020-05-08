@@ -3,10 +3,13 @@ const app = express();
 const bodyParser = require('body-parser');
 require('colors');
 const connectDB = require('./config/db');
+const dotenv = require('dotenv');
 const errorHandler = require('./middleware/error');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 var PORT = process.env.PORT || 5000;
+dotenv.config({ path: './config/config.env' });
+
 
 // connect mongo
 connectDB();
@@ -16,14 +19,6 @@ if (process.env.NODE_ENV !== 'production') {
   const dotenv = require('dotenv');
   // load env vars. this goes before route files so api works
   dotenv.config({ path: './config/config.env' });
-}
-
-// heroku 
-if (process.env.PORT === 'production') {
-  app.use(express.static(path.join(__dirname, "client/build")));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  })
 }
 
 // bodyparser middleware, handles http requests
@@ -40,9 +35,17 @@ app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
 app.use('/stripe', require('./routes/stripe'));
 
+// heroku 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, "client/build")));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+  })
+}
+
 app.use(errorHandler);
 
-app.get('/', (req, res) => res.send('API Running'));
+// app.get('/', (req, res) => res.send('API Running'));
 
 console.log('');
 app.listen(
