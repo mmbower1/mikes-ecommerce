@@ -30,7 +30,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Router basename={process.env.PUBLIC_URL}>
+      <Router basename='/'>
         <Fragment>
         {/* <Header /> */}
           <Switch>
