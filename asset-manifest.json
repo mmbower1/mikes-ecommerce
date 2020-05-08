@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mikes-ecommerce/static/css/main.32a88de0.chunk.css",
-    "main.js": "/mikes-ecommerce/static/js/main.2a2d7a8c.chunk.js",
-    "main.js.map": "/mikes-ecommerce/static/js/main.2a2d7a8c.chunk.js.map",
+    "main.js": "/mikes-ecommerce/static/js/main.96317c5e.chunk.js",
+    "main.js.map": "/mikes-ecommerce/static/js/main.96317c5e.chunk.js.map",
     "runtime-main.js": "/mikes-ecommerce/static/js/runtime-main.7e2b5ba0.js",
     "runtime-main.js.map": "/mikes-ecommerce/static/js/runtime-main.7e2b5ba0.js.map",
     "static/js/2.871d242d.chunk.js": "/mikes-ecommerce/static/js/2.871d242d.chunk.js",
     "static/js/2.871d242d.chunk.js.map": "/mikes-ecommerce/static/js/2.871d242d.chunk.js.map",
     "index.html": "/mikes-ecommerce/index.html",
-    "precache-manifest.0e37b55f3df8da52106e4c3dfc56e5e5.js": "/mikes-ecommerce/precache-manifest.0e37b55f3df8da52106e4c3dfc56e5e5.js",
+    "precache-manifest.d11a7fb53aac0a4cb531949119cfd37f.js": "/mikes-ecommerce/precache-manifest.d11a7fb53aac0a4cb531949119cfd37f.js",
     "service-worker.js": "/mikes-ecommerce/service-worker.js",
     "static/css/main.32a88de0.chunk.css.map": "/mikes-ecommerce/static/css/main.32a88de0.chunk.css.map",
     "static/js/2.871d242d.chunk.js.LICENSE.txt": "/mikes-ecommerce/static/js/2.871d242d.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.7e2b5ba0.js",
     "static/js/2.871d242d.chunk.js",
     "static/css/main.32a88de0.chunk.css",
-    "static/js/main.2a2d7a8c.chunk.js"
+    "static/js/main.96317c5e.chunk.js"
   ]
 }
