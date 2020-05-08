@@ -30,7 +30,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Router basename='/'>
+      <Router basename={window.location.pathname || ''}>
         <Fragment>
         {/* <Header /> */}
           <Switch>
