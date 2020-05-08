@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, useHistory, Switch, Route } from 'react-router-dom';
 // import PrivateRoute from './components/routing/PrivateRoute';
 import setAuthToken from './utils/setAuthToken';
 // actions
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={useHistory}>
         <Fragment>
         {/* <Header /> */}
           <Switch>
