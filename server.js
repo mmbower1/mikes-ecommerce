@@ -1,7 +1,7 @@
 const express = require('express');// express
 const app = express();
 const bodyParser = require('body-parser');
-require('colors');
+const colors = require('colors');
 const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const errorHandler = require('./middleware/error');
