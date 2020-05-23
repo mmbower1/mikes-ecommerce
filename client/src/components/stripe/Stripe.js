@@ -4,6 +4,9 @@ import { connect } from 'react-redux'
 import { pay } from '../../actions/stripe';
 // npm
 import StripeCheckout from 'react-stripe-checkout';
+import {Elements} from '@stripe/react-stripe-js';
+import {loadStripe} from '@stripe/stripe-js';
+
 
 const Stripe = ({ price }) => {
   const stripePrice = price * 100;
@@ -27,19 +30,21 @@ const Stripe = ({ price }) => {
     //   console.log(err);
     //   alert('Payment error')
     // })
+    console.log('ontoken')
   }
 
   return (
     <StripeCheckout
+      amount={stripePrice}
+      billingAddress
+      bitcoin
+      description={`Your total is ${'$' + price}`}
+      image="https://www.vidhub.co/assets/logos/vidhub-icon-2e5c629f64ced5598a56387d4e3d0c7c.png"
       label='Pay with Stripe'
       name="Mike's CBD"
-      billingAddress
       shippingAddress
-      image=''
-      description={`Your total is ${'$' + price}`}
-      amount={stripePrice}
       panelLabel='Pay with Stripe'
-      token={onToken}
+      token={token => onToken(token)}
       stripeKey={publishableKey}
     />
   )

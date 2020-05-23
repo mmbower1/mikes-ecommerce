@@ -43,6 +43,10 @@
   .collection-item {
     width: 40vw;
 
+    .collection-footer {
+      font-size: 13px;
+    }
+
     &:hover {
       .image {
         opacity: unset;

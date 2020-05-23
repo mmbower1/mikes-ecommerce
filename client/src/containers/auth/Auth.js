@@ -26,6 +26,7 @@ class Auth extends React.Component {
 				<div className="header">
 					<Menu size='massive'>
 						<Menu.Item>
+						<i class="fas fa-long-arrow-alt-left"></i>&nbsp;
 							<Link to="/">Back</Link>
 						</Menu.Item>
 					</Menu>

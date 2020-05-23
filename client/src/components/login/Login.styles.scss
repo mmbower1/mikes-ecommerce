@@ -3,3 +3,9 @@
   text-align: center;
   width: 35vw;
 }
+
+@media screen and (max-width: 800px) {
+	.login {
+		width: 80%;
+	}
+}

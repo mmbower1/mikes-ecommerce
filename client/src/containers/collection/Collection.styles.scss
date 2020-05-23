@@ -19,6 +19,10 @@
 }
 
 @media screen and (max-width: 800px) {
+  .collection-page .title {
+    margin-top: 30px;
+  }
+
   .collection-page .items {
     display: grid;
     grid-template-columns: 1fr 1fr;

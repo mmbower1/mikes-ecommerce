@@ -6,7 +6,7 @@ const SHOP_DATA = [
     items: [
       {
         id: 1,
-        name: 'Strawberry Tincture',
+        name: 'Strawberry Wild',
         imageUrl: 'https://images.unsplash.com/photo-1560877241-1dc5569c06a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80',
         price: 30
       },

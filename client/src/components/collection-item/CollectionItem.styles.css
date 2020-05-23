@@ -35,6 +35,9 @@
   .collection-item {
     width: 40vw;
   }
+  .collection-item .collection-footer {
+    font-size: 13px;
+  }
   .collection-item:hover .image {
     opacity: unset;
   }

@@ -56,6 +56,7 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
 
         <Menu.Menu position='right'>
           <Menu.Item>
+          <i class="fas fa-sign-in-alt"></i>&nbsp;
             <Link to='/auth'>Login</Link>
           </Menu.Item>
         </Menu.Menu>
