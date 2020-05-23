@@ -2,3 +2,11 @@
   margin: auto;
   width: 86%;
 }
+@media screen and (max-width: 800px) {
+  .header {
+    height: 60px;
+    margin-bottom: 40px;
+    padding: 4px;
+    width: 100%;
+  }
+}

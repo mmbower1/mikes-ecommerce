@@ -45,6 +45,8 @@ const Checkout = ({ isAuthenticated, cartItems, total }) => {
         <div className="total">
           <span>TOTAL:  ${total}</span>
         </div>
+        <br/>
+        <br/>
         <Stripe price={total} />
         <h4 style={{color: 'red'}}>TEST: 4242 4242 4242 4242 - Exp: 01/23 - CW: 123</h4>
       </div>

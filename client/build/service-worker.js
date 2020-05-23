@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mikes-ecommerce/precache-manifest.54c2d0162c7a0bbda85b09de1d2637be.js"
+  "/mikes-ecommerce/precache-manifest.42c363b9ddd59bd02a3daabbbbe935db.js"
 );
 
 self.addEventListener('message', (event) => {

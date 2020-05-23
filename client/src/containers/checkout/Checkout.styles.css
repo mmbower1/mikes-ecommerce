@@ -25,3 +25,16 @@
   margin-left: auto;
   font-size: 36px;
 }
+@media screen and (max-width: 800px) {
+  .checkout-page {
+    min-height: 0;
+    width: 90%;
+  }
+  .checkout-page .header-block {
+    font-size: 11px;
+  }
+  .checkout-page .total {
+    margin: auto;
+    margin-top: 40px;
+  }
+}

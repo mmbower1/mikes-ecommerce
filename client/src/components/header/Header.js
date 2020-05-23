@@ -21,7 +21,7 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
   const authLinks = (
     <div className="header">
       <Menu size='massive'>
-        <Menu.Item>
+        <Menu.Item className="logo-container">
           <Link to='/'><Logo /></Link>
         </Menu.Item>
         <Menu.Item>
@@ -47,7 +47,7 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
   const guestLinks = (
     <div className="header">
       <Menu size='massive'>
-        <Menu.Item>
+        <Menu.Item className="logo-container">
           <Link to='/'><Logo /></Link>
         </Menu.Item>
         <Menu.Item>

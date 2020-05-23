@@ -10,7 +10,9 @@ import Edit from './containers/edit/Edit';
 import Homepage from './containers/homepage/Homepage';
 import ShopPage from './containers/shop/Shop';
 import Auth from './containers/auth/Auth';
-import './App.css';
+// styles
+import { GlobalStyle } from './global.styles.js';
+import './App.css'
 // components
 // import Header from './components/header/Header';
 // redux
@@ -33,6 +35,7 @@ function App() {
       <Router basename={window.location.pathname || ''}>
         <Fragment>
         {/* <Header /> */}
+          <GlobalStyle />
           <Switch>
             <Route exact path='/checkout' component={Checkout} />
             <Route exact path='/' component={Homepage} />

@@ -33,3 +33,8 @@
   padding-left: 12px;
   cursor: pointer;
 }
+@media screen and (max-width: 800px) {
+  .checkout-item .name {
+    font-size: 13px;
+  }
+}

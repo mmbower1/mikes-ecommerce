@@ -44,7 +44,7 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use(errorHandler);
 
-// app.get('/', (req, res) => res.send('API Running'));
+app.get('/', (req, res) => res.send('API Running'));
 
 console.log('');
 app.listen(
