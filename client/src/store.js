@@ -10,7 +10,7 @@ import { persistStore } from 'redux-persist';
 const initialState = {};
 const middleware = [thunk]; // sagaMiddleware replaces thunk here if using sagas
 
-const store = createStore(
+export const store = createStore(
   rootReducer,
   initialState,
   composeWithDevTools(applyMiddleware(...middleware))
@@ -18,4 +18,5 @@ const store = createStore(
 
 export const persistor = persistStore(store);
 
-export default store;
+// export default { store };
+// export default { persistor };

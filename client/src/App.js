@@ -16,8 +16,9 @@ import './App.css'
 // components
 // import Header from './components/header/Header';
 // redux
-import store from './store';
+import { store, persistor } from './store';
 import { Provider } from 'react-redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -34,15 +35,17 @@ function App() {
     <Provider store={store}>
       <Router basename={window.location.pathname || ''}>
         <Fragment>
-        {/* <Header /> */}
-          <GlobalStyle />
-          <Switch>
-            <Route exact path='/checkout' component={Checkout} />
-            <Route exact path='/' component={Homepage} />
-            <Route exact path='/edit' component={Edit} />
-            <Route path='/shop'component={ShopPage} />
-            <Route path='/auth'component={Auth} />
-          </Switch>
+          <PersistGate persistor={persistor}>
+          {/* <Header /> */}
+            <GlobalStyle />
+            <Switch>
+              <Route exact path='/checkout' component={Checkout} />
+              <Route exact path='/' component={Homepage} />
+              <Route exact path='/edit' component={Edit} />
+              <Route path='/shop'component={ShopPage} />
+              <Route path='/auth'component={Auth} />
+            </Switch>
+          </PersistGate>
         </Fragment>
       </Router>
     </Provider>
