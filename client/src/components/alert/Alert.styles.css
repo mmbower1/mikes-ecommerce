@@ -6,11 +6,11 @@
   --success-color: #28a745;
 }
 .alert {
-  border: 1px solid black;
   color: var(--primary-color);
-  padding: 0.8rem;
+  font-weight: bold;
   margin: 1rem 0;
   opacity: 0.9;
+  padding: 0.8rem;
 }
 .alert-primary {
   color: var(--primary-color);

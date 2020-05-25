@@ -36,7 +36,11 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
           <Dropdown item text={isAuthenticated ? user.name : null}>
             <Dropdown.Menu>
               <Link to="/edit"><Dropdown.Item>My Account</Dropdown.Item></Link>
-              <Link to="/" onClick={logout}><Dropdown.Item>Logout</Dropdown.Item></Link>
+              <Link to="/" onClick={logout}>
+                <Dropdown.Item>
+                  Logout&nbsp;<i className="fas fa-sign-out-alt"></i>
+                </Dropdown.Item>
+              </Link>
             </Dropdown.Menu>
           </Dropdown>
         </Menu.Menu>
@@ -56,7 +60,7 @@ const Header = ({ auth: { isAuthenticated, loading, user }, cart, logout }) => {
 
         <Menu.Menu position='right'>
           <Menu.Item>
-          <i class="fas fa-sign-in-alt"></i>&nbsp;
+          <i className="fas fa-sign-in-alt"></i>&nbsp;
             <Link to='/auth'>Login</Link>
           </Menu.Item>
         </Menu.Menu>

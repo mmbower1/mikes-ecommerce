@@ -9,7 +9,7 @@ import { setAlert } from '../../actions/alert';
 // components
 import './Login.styles.scss';
 
-const Login = ({ isAuthenticated, login, setAlert }) => {
+const Login = ({ setAlert, login, isAuthenticated, user }) => {
 	const [ formData, setFormData ] = useState({
 		email: '',
 		password: ''
@@ -21,7 +21,7 @@ const Login = ({ isAuthenticated, login, setAlert }) => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		setAlert('You have successfully logged in', 'success');
+		setAlert(`Welcome ${user.name}`, 'success');
 		login(email, password);
 	};
 
@@ -67,8 +67,9 @@ Login.propTypes = {
   isAuthenticated: PropTypes.bool,
 }
 
-const mapStateToProps = state => ({
-  isAuthenticated: state.auth.isAuthenticated
+const mapStateToProps = ({ auth: { isAuthenticated, user }}) => ({
+	isAuthenticated,
+	user
 })
 
 export default connect(mapStateToProps, { 
