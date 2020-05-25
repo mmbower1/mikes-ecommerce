@@ -21,7 +21,7 @@ const Login = ({ setAlert, login, isAuthenticated, user }) => {
 
 	const onSubmit = (e) => {
 		e.preventDefault();
-		setAlert(`Welcome ${user.name}`, 'success');
+		setAlert(`Welcome`, 'success');
 		login(email, password);
 	};
 

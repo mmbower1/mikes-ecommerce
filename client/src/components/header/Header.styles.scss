@@ -9,7 +9,11 @@
 }
 
 .ui.massive.menu {
-  font-size: 15px;
+  font-size: 18px;
+}
+
+.ui.buttons>.ui.dropdown:last-child .menu, .ui.menu .right.dropdown.item .menu, .ui.menu .right.menu .dropdown:last-child .menu {
+  font-size: 19px;
 }
 //
 

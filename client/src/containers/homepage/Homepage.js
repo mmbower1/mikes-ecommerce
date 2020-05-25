@@ -14,7 +14,7 @@ const Homepage = ({ loading }) => {
       <div>
         <Header />
       </div>
-      {loading === true, console.log('spinner worked?')
+      {loading === true
           ? <Spinner /> : 
         <div className="homepage">
           <Alert />
