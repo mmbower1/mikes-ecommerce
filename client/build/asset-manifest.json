@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/mikes-ecommerce/static/css/main.32a88de0.chunk.css",
-    "main.js": "/mikes-ecommerce/static/js/main.d44d64b8.chunk.js",
-    "main.js.map": "/mikes-ecommerce/static/js/main.d44d64b8.chunk.js.map",
+    "main.css": "/mikes-ecommerce/static/css/main.80aaabc6.chunk.css",
+    "main.js": "/mikes-ecommerce/static/js/main.e4e29f25.chunk.js",
+    "main.js.map": "/mikes-ecommerce/static/js/main.e4e29f25.chunk.js.map",
     "runtime-main.js": "/mikes-ecommerce/static/js/runtime-main.bf2e3888.js",
     "runtime-main.js.map": "/mikes-ecommerce/static/js/runtime-main.bf2e3888.js.map",
-    "static/js/2.89e56f31.chunk.js": "/mikes-ecommerce/static/js/2.89e56f31.chunk.js",
-    "static/js/2.89e56f31.chunk.js.map": "/mikes-ecommerce/static/js/2.89e56f31.chunk.js.map",
+    "static/js/2.0e970a5f.chunk.js": "/mikes-ecommerce/static/js/2.0e970a5f.chunk.js",
+    "static/js/2.0e970a5f.chunk.js.map": "/mikes-ecommerce/static/js/2.0e970a5f.chunk.js.map",
     "index.html": "/mikes-ecommerce/index.html",
-    "precache-manifest.42c363b9ddd59bd02a3daabbbbe935db.js": "/mikes-ecommerce/precache-manifest.42c363b9ddd59bd02a3daabbbbe935db.js",
+    "precache-manifest.5e0b6e963b57d903ea2eda0892259caf.js": "/mikes-ecommerce/precache-manifest.5e0b6e963b57d903ea2eda0892259caf.js",
     "service-worker.js": "/mikes-ecommerce/service-worker.js",
-    "static/css/main.32a88de0.chunk.css.map": "/mikes-ecommerce/static/css/main.32a88de0.chunk.css.map",
-    "static/js/2.89e56f31.chunk.js.LICENSE.txt": "/mikes-ecommerce/static/js/2.89e56f31.chunk.js.LICENSE.txt",
+    "static/css/main.80aaabc6.chunk.css.map": "/mikes-ecommerce/static/css/main.80aaabc6.chunk.css.map",
+    "static/js/2.0e970a5f.chunk.js.LICENSE.txt": "/mikes-ecommerce/static/js/2.0e970a5f.chunk.js.LICENSE.txt",
     "static/media/crown.ed28accb.svg": "/mikes-ecommerce/static/media/crown.ed28accb.svg",
+    "static/media/green-spinner.gif": "/mikes-ecommerce/static/media/green-spinner.3551210e.gif",
     "static/media/shopping-bag.09e6f5e7.svg": "/mikes-ecommerce/static/media/shopping-bag.09e6f5e7.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.bf2e3888.js",
-    "static/js/2.89e56f31.chunk.js",
-    "static/css/main.32a88de0.chunk.css",
-    "static/js/main.d44d64b8.chunk.js"
+    "static/js/2.0e970a5f.chunk.js",
+    "static/css/main.80aaabc6.chunk.css",
+    "static/js/main.e4e29f25.chunk.js"
   ]
 }
