@@ -12,6 +12,7 @@ import { loadUser } from './actions/auth';
 // import ShopPage from './containers/shop/Shop';
 
 // components
+import ErrorBoundary from './components/error-boundary/ErrorBoundary';
 // import Header from './components/header/Header';
 import Spinner from './components/spinner/Spinner';
 // redux
@@ -49,13 +50,15 @@ function App() {
           {/* <Header /> */}
             <GlobalStyle />
             <Switch>
-              <Suspense fallback={<Spinner />}>
-                <Route exact path='/' component={Homepage} />
-                <Route path='/auth'component={Auth} />
-                <Route exact path='/checkout' component={Checkout} />
-                <Route exact path='/edit' component={Edit} />
-                <Route path='/shop'component={ShopPage} />
-              </Suspense>
+              <ErrorBoundary>
+                <Suspense fallback={<Spinner />}>
+                  <Route exact path='/' component={Homepage} />
+                  <Route path='/auth'component={Auth} />
+                  <Route exact path='/checkout' component={Checkout} />
+                  <Route exact path='/edit' component={Edit} />
+                  <Route path='/shop'component={ShopPage} />
+                </Suspense>
+              </ErrorBoundary>
             </Switch>
           </PersistGate>
         </Fragment>
